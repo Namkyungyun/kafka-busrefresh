@@ -4,11 +4,11 @@ server:
 spring:
   application:
     name: config-service
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      client-id: config-service
+      group-id: yaml-generator
   profiles:
     active: native
   cloud:
@@ -17,8 +17,12 @@ spring:
         native:
           search-locations: file:\\\${user.home}\Desktop\yaml-generator\config-repo
 #          search-locations: file:\\\${user.home}\Desktop\Rabbitmq-SpringCloudBus\config-repo
+
 management:
   endpoints:
+    web:
       exposure:
-        include: refresh, health, busrefresh, info
+        include:
+          - "refresh"
+          - "bus-refresh"
 

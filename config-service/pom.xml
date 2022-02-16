@@ -22,7 +22,7 @@
         <!-- spring-cloud-bus_to-use rabbitmq -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <artifactId>spring-cloud-starter-bus-kafka</artifactId>
         </dependency>
 
         <!-- config-server -->

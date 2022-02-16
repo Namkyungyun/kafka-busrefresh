@@ -1,15 +1,17 @@
 server:
     port: 8000
 spring:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+  kafka:
+    bootstrap-servers: localhost:9092
+    client-id: apigateway-service
   cloud:
     config:
       uri: http://127.0.0.1:8888
       name: resource
+    stream:
+      kafka:
+        binder:
+          auto-add-partitions: true
 
 eureka:
   instance:
@@ -25,4 +27,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, busrefresh, info
+        include:
+          - "refresh"
+          - "bus-refresh"
