@@ -1,5 +1,5 @@
 text:
-  change: change test
+  change: springCloudBus_busrefresh_test
 
 logging:
   level:
@@ -10,21 +10,16 @@ logging:
 spring:
   kafka:
     bootstrap-servers: localhost:9092
-    client-id: info-service
-  cloud:
-    stream:
-      kafka:
-        binder:
-          auto-add-partitions: true
+    client_id: info-service
   r2dbc:
     #    #mariadb
-#    url: r2dbc:mariadb://localhost:3306/yamlgenerator
-#    username: root
-#    password: test1357
+    url: r2dbc:mariadb://localhost:3306/yamlgenerator
+    username: root
+    password: test1357
   #    #h2-file
-    url: r2dbc:h2:file:///C:/Users/skaru/Desktop/yaml-generator/test
-    username: sa
-    password:
+#    url: r2dbc:h2:file:///C:/Users/skaru/Desktop/yaml-generator/test
+#    username: sa
+#    password:
 
 eureka:
   instance:

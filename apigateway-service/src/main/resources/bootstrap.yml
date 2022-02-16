@@ -8,10 +8,6 @@ spring:
     config:
       uri: http://127.0.0.1:8888
       name: resource
-    stream:
-      kafka:
-        binder:
-          auto-add-partitions: true
 
 eureka:
   instance:
