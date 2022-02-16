@@ -1,5 +1,5 @@
 text:
-  change: change_3
+  change: change test
 
 logging:
   level:
@@ -8,11 +8,14 @@ logging:
         r2dbc: DEBUG
 
 spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  kafka:
+    bootstrap-servers: localhost:9092
+    client-id: info-service
+  cloud:
+    stream:
+      kafka:
+        binder:
+          auto-add-partitions: true
   r2dbc:
     #    #mariadb
 #    url: r2dbc:mariadb://localhost:3306/yamlgenerator
