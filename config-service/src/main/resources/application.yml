@@ -6,9 +6,7 @@ spring:
     name: config-service
   kafka:
     bootstrap-servers: localhost:9092
-    consumer:
-      client-id: config-service
-      group-id: yaml-generator
+    client-id: config-service
   profiles:
     active: native
   cloud:
